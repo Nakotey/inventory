@@ -16,7 +16,7 @@ document.body.onload = () => {
         let myValue = JSON.parse(localStorage.getItem('myInventory'));
         myValue.push({name: document.querySelector('#input1').value, description: document.querySelector('#input2').value, category: document.querySelector('#input3').value, quantity: document.querySelector('#input4').value});
         localStorage.setItem('myInventory', JSON.stringify(myValue));
-        alert("Item successfully added");
+        alert("Item added successfully!");
         location.reload();
     }
 }

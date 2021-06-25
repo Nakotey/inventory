@@ -15,7 +15,7 @@ document.body.onload = ()=>{
         <td class="item-stock">${data['description']}</td>
         <td class="item-qty">${data['category']}</td>
         <td class="item-price">${data['quantity']}</td>
-        <td><button class="deleteBtn">DELETE</button></td>
+        <td><button class="deleteBtn">REMOVE</button></td>
       </tr>`
         allData += dispItem;
     });
@@ -32,6 +32,8 @@ delBtns.forEach(btn => {
         let productIndex = products.findIndex(y => y.name === ref);
         products.splice(productIndex, 1);
         localStorage.setItem('myInventory', JSON.stringify(products));
+        location.reload();
+        alert("Remove Successful");
     }, false)
 })
 }

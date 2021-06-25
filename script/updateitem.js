@@ -14,7 +14,7 @@ document.body.onload =()=>{
         <td class="item-stock"><input type="text" name="" value="${data['description']}"></td>
         <td class="item-qty">${data['category']}</td>
         <td class="item-price">${data['quantity']}</td>
-        <td><button class="editBtn">EDIT</button></td>
+        <td><button class="editBtn">UPDATE</button></td>
       </tr>`
         allData += dispItem;
     });
@@ -33,6 +33,8 @@ document.body.onload =()=>{
             let productIndex = products.findIndex(y => y.name === ref);
             products[productIndex].description = desInput;
             localStorage.setItem('myInventory', JSON.stringify(products));
+            location.reload();
+            alert("Details update successful");
         }, false)
     })
 }

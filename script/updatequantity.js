@@ -14,7 +14,7 @@ document.body.onload = ()=>{
         <td class="item-stock">${data['description']}</td>
         <td class="item-qty">${data['category']}</td>
         <td class="item-price"><input type="number" name="" value="${data['quantity']}"></td>
-        <td><button class="qtyBtn">EDIT QTY</button></td>
+        <td><button class="qtyBtn">UPDATE</button></td>
       </tr>`
         allData += dispItem;
     });
@@ -32,6 +32,8 @@ qtyBtns.forEach(btn => {
         let productIndex = products.findIndex(y => y.name === ref);
         products[productIndex].quantity = qtyInput;
         localStorage.setItem('myInventory', JSON.stringify(products));
+        location.reload();
+        alert("Quantity updated successfully!");
     }, false)
 })
 }
